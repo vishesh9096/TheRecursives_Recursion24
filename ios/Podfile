@@ -11,7 +11,7 @@ require Pod::Executable.execute_command('node', ['-p',
   )', __dir__]).strip
 
 
-platform :ios, '13.0'
+platform :ios, '13.4'
 prepare_react_native_project!
 
 
@@ -32,6 +32,9 @@ if linkage != nil
   Pod::UI.puts "Configuring Pod with #{linkage}ally linked Frameworks".green
   use_frameworks! :linkage => linkage.to_sym
 end
+
+rn_maps_path = '../node_modules/react-native-maps'
+pod 'react-native-google-maps', :path => rn_maps_path
 
 target 'reactnativestarter' do
   use_expo_modules!
