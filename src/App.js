@@ -1,37 +1,41 @@
-import { View, Text, StyleSheet } from 'react-native'
-import React from 'react'
-import StreetView from 'react-native-streetview';
-const App = () => {
+import 'react-native-gesture-handler'
+import React, { useEffect } from 'react';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import Navigation from './navigation/Navigation';
+import {
+  ConnectWallet,
+  localWallet,
+  metamaskWallet,
+  rainbowWallet,
+  ThirdwebProvider,
+
+} from '@thirdweb-dev/react-native';
+import { LogBox } from 'react-native';
+LogBox.ignoreLogs(['Warning: ...']); // Ignore log notification by message
+LogBox.ignoreAllLogs();//Ignore all log notifications
+
+
+console.disableYellowBox = true;
+
+function App() {
   return (
-    <View style={styles.container}>
-  <StreetView
-    style={styles.streetView}
-    allGesturesEnabled={true}
-    coordinate={{
-      'latitude': -33.852,
-      'longitude': 151.211
-    }}
-    pov={{
-	tilt:parseFloat(0),
-	bearing:parseFloat(0),
-	zoom:parseInt(1)
-    }}
-  />
-</View>
-  )
+    <ThirdwebProvider
+    activeChain="goerli"
+
+    clientId="6b9ff5c7fa50310d44c6644d54e8e673"// uncomment this line after you set your clientId in the .env file
+    supportedWallets={[metamaskWallet(), rainbowWallet(), localWallet()]}>
+    {/* <AppInner /> */}
+    <GestureHandlerRootView style={{ flex: 1 }}>
+
+        <Navigation />
+
+    </GestureHandlerRootView>
+  </ThirdwebProvider>
+
+    
+
+    
+  );
 }
 
-export default App
-
-const styles = StyleSheet.create({
-    container: {
-      flex: 1
-    },
-    streetView: {
-      position: 'absolute',
-      top: 0,
-      left: 0,
-      right: 0,
-      bottom: 0,
-    },
-  });
+export default App;

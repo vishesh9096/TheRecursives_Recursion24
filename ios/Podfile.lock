@@ -57,9 +57,6 @@ PODS:
     - ExpoModulesCore
   - ExpoDocumentPicker (11.5.4):
     - ExpoModulesCore
-  - ExpoGL (13.2.0):
-    - ExpoModulesCore
-    - ReactCommon/turbomodule/core
   - ExpoKeepAwake (12.3.0):
     - ExpoModulesCore
   - ExpoModulesCore (1.5.12):
@@ -701,7 +698,6 @@ DEPENDENCIES:
   - Expo (from `../node_modules/expo`)
   - ExpoClipboard (from `../node_modules/expo-clipboard/ios`)
   - ExpoDocumentPicker (from `../node_modules/expo-document-picker/ios`)
-  - ExpoGL (from `../node_modules/expo-gl`)
   - ExpoKeepAwake (from `../node_modules/expo-keep-awake/ios`)
   - ExpoModulesCore (from `../node_modules/expo-modules-core`)
   - ExpoSecureStore (from `../node_modules/expo-secure-store/ios`)
@@ -855,8 +851,6 @@ EXTERNAL SOURCES:
     :path: "../node_modules/expo-clipboard/ios"
   ExpoDocumentPicker:
     :path: "../node_modules/expo-document-picker/ios"
-  ExpoGL:
-    :path: "../node_modules/expo-gl"
   ExpoKeepAwake:
     :path: "../node_modules/expo-keep-awake/ios"
   ExpoModulesCore:
@@ -1027,7 +1021,6 @@ SPEC CHECKSUMS:
   Expo: 61a8e1aa94311557c137c0a4dfd4fe78281cfbb4
   ExpoClipboard: 695f274f8e028cd113837f917da40c76850877eb
   ExpoDocumentPicker: 5cb7389ff935b4addefdd466a606de51a512e922
-  ExpoGL: d41d4054d14289fb9f537b1203f23a845525c2dd
   ExpoKeepAwake: be4cbd52d9b177cde0fd66daa1913afa3161fc1d
   ExpoModulesCore: c480fd4e3c7c8e81f0a6ba3a7c56869f25fe016d
   ExpoSecureStore: 57db3b6da8b59046e2057e95bf7738a8027b47c3
